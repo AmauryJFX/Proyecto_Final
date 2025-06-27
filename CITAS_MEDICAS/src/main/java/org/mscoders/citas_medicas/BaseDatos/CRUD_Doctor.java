@@ -136,7 +136,7 @@ public class CRUD_Doctor {
 
         return null;
     }
-    
+
     /*public static Doctor findDoctor (int by, Doctor doctor) {
 
         Connection conn = Conexion.conectarBD();
@@ -186,6 +186,28 @@ public class CRUD_Doctor {
     //quitale ese error
     */
     // ya xd
+    public static List<Doctor> findAll() {
+        List<Doctor> lista = new ArrayList<>();
+        String sql = "SELECT * FROM doctor";
+
+        try (Connection conn = Conexion.conectarBD();
+             PreparedStatement pst = conn.prepareStatement(sql);
+             ResultSet rs = pst.executeQuery()) {
+
+            while (rs.next()) {
+                Doctor doc = new Doctor();
+                doc.setId(rs.getInt("id"));
+                doc.setNombre(rs.getString("nombre"));
+                doc.setEspecialidad(rs.getString("especialidad"));
+                lista.add(doc);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return lista;
+    }
 
 }
 

@@ -184,6 +184,4 @@ public class CRUD_Cita {
         return citas;
 
     }
-
-
 }

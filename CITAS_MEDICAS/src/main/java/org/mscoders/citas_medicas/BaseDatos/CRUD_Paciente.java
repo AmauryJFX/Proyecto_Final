@@ -9,13 +9,11 @@ import java.util.List;
 public class CRUD_Paciente {
 
     public static boolean Create(Paciente paciente) {
-        Connection conn = Conexion.conectarBD();
+        String sql = "INSERT INTO paciente (Correo, Usuario, Contrasena, Nombre, Nacimiento, Telefono, His_Medico_id) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
-        String sql = "INSERT INTO paciente (correo, usuario, contrasena, nombre, nacimiento, telefono, his_medico_id) VALUES (?,?,?,?,?,?,?)";
+        try (Connection conn = Conexion.conectarBD();
+             PreparedStatement pst = conn.prepareStatement(sql)) {
 
-        try {
-
-            PreparedStatement pst = conn.prepareStatement( sql );
             pst.setString(1, paciente.getCorreo());
             pst.setString(2, paciente.getUsuario());
             pst.setString(3, paciente.getContrasena());
@@ -25,14 +23,25 @@ public class CRUD_Paciente {
             pst.setInt(7, paciente.getHis_medico_id());
 
             pst.executeUpdate();
-
             return true;
 
         } catch (SQLException e) {
-            System.out.println("Error al insertar el paciente");
+            System.out.println("Error SQL al insertar paciente: " + e.getMessage());
+
+            if (e.getMessage().contains("Correo")) {
+                throw new RuntimeException("correo_duplicado");
+            } else if (e.getMessage().contains("Usuario")) {
+                throw new RuntimeException("usuario_duplicado");
+            } else if (e.getMessage().contains("Telefono")) {
+                throw new RuntimeException("telefono_duplicado");
+            } else if (e.getMessage().contains("His_Medico_id")) {
+                throw new RuntimeException("historial_duplicado");
+            } else {
+                throw new RuntimeException("error_general");
+            }
         }
-        return false;
     }
+
 
     public static List<Paciente> Read() {
         Connection conn = Conexion.conectarBD();

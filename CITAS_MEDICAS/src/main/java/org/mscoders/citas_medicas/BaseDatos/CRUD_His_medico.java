@@ -9,25 +9,30 @@ import java.util.List;
 
 public class CRUD_His_medico {
 
-    public static boolean Create(His_Medico his) {
-        Connection conn = Conexion.conectarBD();
+    public static int Create(His_Medico historial) {
+        String sql = "INSERT INTO his_medico (Alergias, Antecedentes) VALUES (?, ?)";
 
-        String sql = "INSERT INTO his_medico (alergias, antecedentes) VALUES (?,?)";
+        try (Connection conn = Conexion.conectarBD();
+             PreparedStatement pst = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 
-        try {
-
-            PreparedStatement pst = conn.prepareStatement(sql);
-            pst.setString(1, his.getAlergia());
-            pst.setString(2, his.getAntecedente());
+            pst.setString(1, historial.getAlergia());
+            pst.setString(2, historial.getAntecedente());
             pst.executeUpdate();
 
-            return true;
+            ResultSet generatedKeys = pst.getGeneratedKeys();
+            if (generatedKeys.next()) {
+                return generatedKeys.getInt(1);
+            }
 
         } catch (SQLException e) {
-            System.out.println("Error al agregar historial medico");
+            System.out.println("Error al insertar historial médico: " + e.getMessage());
+            e.printStackTrace();
         }
-        return false;
+
+        return -1;
     }
+
+
 
     public static List<His_Medico> Read() {
         Connection conn = Conexion.conectarBD();
@@ -57,7 +62,7 @@ public class CRUD_His_medico {
 
 
         Connection conn = Conexion.conectarBD();
-        String sql = "UPDATE his_medico SET alergias = ?, antecedentes = ? WHERE id = ? ";
+        String sql = "UPDATE his_medico SET alergia = ?, antecedente = ? WHERE id = ? ";
 
         try {
 
@@ -90,6 +95,30 @@ public class CRUD_His_medico {
             System.out.println("Error al eliminar la historial medico");
         }
         return false;
+    }
+
+    public static His_Medico obtenerPorPacienteId(int pacienteId) {
+        His_Medico h = null;
+        String sql = "SELECT * FROM historial_medico WHERE paciente_id = ?";
+
+        try (Connection conn = Conexion.conectarBD();
+             PreparedStatement pst = conn.prepareStatement(sql)) {
+
+            pst.setInt(1, pacienteId);
+            ResultSet rs = pst.executeQuery();
+
+            if (rs.next()) {
+                h = new His_Medico();
+                h.setAlergia(rs.getString("alergia"));
+                h.setAntecedente(rs.getString("antecedente"));
+                // otros campos si los hay
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return h;
     }
 
 }

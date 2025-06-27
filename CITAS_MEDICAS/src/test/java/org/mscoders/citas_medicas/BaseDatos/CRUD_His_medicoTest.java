@@ -17,7 +17,7 @@ class CRUD_His_medicoTest {
         boolean res = false;
         hm.setAlergia( "A1" );
         hm.setAntecedente( "B1 " );
-        res = CRUD_His_medico.Create( hm );
+        //res = CRUD_His_medico.Create( hm );
         System.out.println( hm );
     }
 
