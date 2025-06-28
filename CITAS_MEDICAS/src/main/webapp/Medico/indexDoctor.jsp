@@ -13,6 +13,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Panel del Doctor</title>
+    <link rel="stylesheet" href="../Css/indexDoctor.css">
 </head>
 <body>
 <h1>Bienvenido, Dr. <%= doctor.getNombre() %> 🩺</h1>
@@ -66,10 +67,9 @@
 
 
 <br>
-<form action="../Logout" method="post">
-    <button type="submit">Cerrar sesión</button>
+<form action="../Cerrar-Sesion" method="post" style="\display:inline; margin-left: 10px;">
+    <button type="submit">Cerrar Sesión</button>
 </form>
-
 
 
 <br>

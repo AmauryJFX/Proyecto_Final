@@ -1,8 +1,8 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Registro de Cita</title>
+    <link rel="stylesheet" href="Css/crearCita.css">
 </head>
 <body>
 
@@ -25,14 +25,9 @@
             <label for="id_medico"> ID Medico </label>
             <input type="text" id="id_medico" name="id_medico" required>
 
-
-
             <button type="submit"> Agendar </button><br><br>
 
-
         </form>
-
-
 
 </body>
 </html>

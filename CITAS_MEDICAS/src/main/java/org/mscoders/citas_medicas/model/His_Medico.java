@@ -8,6 +8,9 @@ public class His_Medico {
 
     private String antecedente; // -- Max. 150 -- \\
 
+
+
+
     public His_Medico() {
     }
 

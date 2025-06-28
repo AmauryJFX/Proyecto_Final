@@ -1,74 +1,72 @@
 body {
-    background-image: url("Imagenes/Index.jpeg");
+    background-image: url("Imagenes/Paciente.jpeg");
     background-size: cover;
-    background-repeat: no-repeat;
     background-position: center;
-    color: #f0f0f0;
+    background-repeat: no-repeat;
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
+    padding: 40px 20px;
 }
-form{
-    background-color: black;
+
+form {
+    background-color: rgba(0, 0, 0, 0.9);
     padding: 40px;
     border-radius: 10px;
-    box-shadow: 0 0 15px white;
+    box-shadow: 0 0 15px black;
+    width: 320px;
     text-align: center;
-    width: 300px;
 }
-h1 {
-    text-align: center;
-    margin-bottom: 25px;
+
+p {
     font-size: 24px;
+    color: #ffffff;
+    margin-bottom: 20px;
 }
 
 label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 14px;
+    color: #cccccc;
 }
-input[type="text"]
-input[type="password"] {
+
+input[type="text"],
+input[type="date"],
+input[type="time"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 18px;
-    border-radius: 6px;
+    border-radius: 5px;
     border: none;
     background-color: #2e2e2e;
     color: #A7B3BE;
-    font-size:  14px;
+    font-size: 14px;
 }
-input::placeholder {
-    color: #C4C4C4;
+
+input[readonly] {
+    background-color: #3a3a3a;
+    color: #888;
 }
-button{
+
+button {
     padding: 10px 20px;
     background-color: #5A6C7E;
-    color:white;
-    border:none;
+    color: white;
+    border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 15px;
     transition: background-color 0.2s ease;
 }
+
 button:hover {
     background-color: #B0B7C2;
-
-    a {
-        margin-top: 20px;
-        font-size: 14px;
-        color: black;
-        text-decoration: none;
-        display: inline-block;
-        text-align: center;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
+    color: black;
 }

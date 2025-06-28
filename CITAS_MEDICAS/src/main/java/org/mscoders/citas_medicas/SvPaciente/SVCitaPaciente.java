@@ -44,21 +44,23 @@ public class SVCitaPaciente extends HttpServlet {
             boolean crear = CRUD_Cita.Create(cita);
 
             if (crear) {
-                resp.sendRedirect("Paciente/citaPaciente.jsp?success=1");
+                //Aqui
+                //Ya le cambie
+                resp.sendRedirect("Paciente/loginPaciente.jsp?success=1");
             } else {
-                resp.sendRedirect("Paciente/citaPaciente.jsp?error=1");
+                resp.sendRedirect("Paciente/loginPaciente.jsp?error=1");
             }
 
         } catch (Exception e) {
             e.printStackTrace();
-            resp.sendRedirect("Paciente/citaPaciente.jsp?error=2");
+            resp.sendRedirect("Paciente/loginPaciente.jsp?error=2");
         }
 
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.sendRedirect("Paciente/citaPaciente.jsp");
+        resp.sendRedirect("Paciente/loginPaciente.jsp");
     }
 
 }

@@ -99,7 +99,9 @@ public class CRUD_His_medico {
 
     public static His_Medico obtenerPorPacienteId(int pacienteId) {
         His_Medico h = null;
-        String sql = "SELECT * FROM his_medico WHERE paciente_id = ?";
+        String sql = "SELECT h.* FROM His_Medico h " +
+                "JOIN Paciente p ON p.His_Medico_id = h.id " +
+                "WHERE p.id = ?";
 
         try (Connection conn = Conexion.conectarBD();
              PreparedStatement pst = conn.prepareStatement(sql)) {
@@ -110,20 +112,21 @@ public class CRUD_His_medico {
             if (rs.next()) {
                 h = new His_Medico();
                 h.setId(rs.getInt("id"));
-                h.setAlergia(rs.getString("alergias"));
-                h.setAntecedente(rs.getString("antecedentes"));
-
+                h.setAlergia(rs.getString("Alergias"));
+                h.setAntecedente(rs.getString("Antecedentes"));
             } else {
                 System.out.println("[INFO] No se encontró historial para paciente_id: " + pacienteId);
             }
 
         } catch (SQLException e) {
-            System.err.println("[ERROR] Fallo al obtener historial médico del paciente_id " + pacienteId);
+            System.err.println("[ERROR] Fallo al obtener historial desde paciente.id = " + pacienteId);
             e.printStackTrace();
         }
 
         return h;
     }
+
+
 
 
 }

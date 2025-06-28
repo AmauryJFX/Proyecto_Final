@@ -7,8 +7,23 @@
 <head>
   <meta charset="UTF-8">
   <title>Inicio - Paciente</title>
+  <link rel="stylesheet" href="../Css/indexPaciente.css">
 </head>
 <body>
+
+<%
+  // Parámetros para mostrar mensajes
+  String success = request.getParameter("success");
+  String error = request.getParameter("error");
+%>
+
+<% if ("1".equals(success)) { %>
+<script>alert("✅ Cita registrada correctamente.");</script>
+<% } else if ("1".equals(error)) { %>
+<script>alert("⚠️ Hubo un error al registrar la cita. Intenta de nuevo.");</script>
+<% } else if ("2".equals(error)) { %>
+<script>alert("❌ Error inesperado. Verifica los datos o reinicia la sesión.");</script>
+<% } %>
 
 <%
   Paciente paciente = (Paciente) session.getAttribute("paciente");
@@ -49,6 +64,7 @@
   <button type="submit">Agendar Cita</button>
 </form>
 
+<br><br>
 <form action="../Cerrar-Sesion" method="post" style="display:inline; margin-left: 10px;">
   <button type="submit">Cerrar Sesión</button>
 </form>

@@ -1,0 +1,97 @@
+body {
+    background-image: url("Imagenes/Paciente.jpeg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    text-align: center;
+}
+
+h3 {
+    font-size: 22px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: #f0f0f0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+    box-shadow: 0 0 15px black;
+}
+
+li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+strong {
+    color: #B0B7C2;
+}
+
+p {
+    font-size: 16px;
+    color: #dddddd;
+    background-color: rgba(0, 0, 0, 0.85);
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 500px;
+    text-align: center;
+}
+
+hr {
+    width: 60%;
+    border: 1px solid #888;
+    margin: 30px auto;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #5A6C7E;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+button:hover {
+    background-color: #B0B7C2;
+    color: black;
+}
+
+form {
+    display: inline-block;
+}
+
+a {
+    color: #A7B3BE;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: white;
+}

@@ -1,8 +1,11 @@
+/* registryDoctor.css actualizado */
+
 body {
     background-image: url("Imagenes/Paciente.jpeg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #f0f0f0;
     display: flex;
@@ -10,32 +13,35 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 100vh;
-    margin: 0;
+    padding: 40px 20px;
+}
+
+h1 {
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-size: 26px;
+    text-shadow: 1px 1px 4px black;
 }
 
 form {
     background-color: rgba(0, 0, 0, 0.9);
     padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 0 20px #000;
-    text-align: left;
-    width: 350px;
-}
-
-h2, h3 {
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    width: 320px;
     text-align: center;
-    margin-bottom: 20px;
-    color: rgba(176, 183, 194, 0.98);
 }
 
 label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-    color: #f0f0f0;
+    margin-bottom: 6px;
+    text-align: left;
+    font-size: 14px;
+    color: #cccccc;
 }
 
-input, select {
+input[type="text"],
+input[type="password"] {
     width: 100%;
     padding: 10px;
     margin-bottom: 18px;
@@ -43,30 +49,35 @@ input, select {
     border: none;
     background-color: #2e2e2e;
     color: #A7B3BE;
+    font-size: 14px;
 }
 
-input:focus, select:focus {
-    outline: 2px solid #5A6C7E;
-}
-
-button {
-    width: 100%;
-    padding: 12px;
+button[type="submit"] {
+    padding: 10px 20px;
     background-color: #5A6C7E;
     color: white;
     border: none;
     border-radius: 5px;
-    font-size: 16px;
-    transition: background-color 0.2s ease;
     cursor: pointer;
+    font-size: 15px;
+    width: 100%;
+    transition: background-color 0.3s ease;
 }
 
-button:hover {
+button[type="submit"]:hover {
     background-color: #B0B7C2;
     color: black;
 }
 
-hr {
-    border: 1px solid #444;
-    margin: 20px 0;
+a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #AED0F0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffffff;
 }

@@ -10,6 +10,10 @@
 
 <h2>Iniciar Sesión Paciente</h2>
 
+<% if ("1".equals(request.getParameter("success"))) { %>
+<script>alert("✅ Cita registrada con éxito. Inicia sesión para continuar.");</script>
+<% } %>
+
 <% if ("1".equals(request.getParameter("error"))) { %>
 <p style="color: red;">Usuario o contraseña incorrectos.</p>
 <% } %>
@@ -28,6 +32,3 @@
 
 </body>
 </html>
-
-
-

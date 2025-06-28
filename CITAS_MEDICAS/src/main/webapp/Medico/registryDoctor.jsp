@@ -4,11 +4,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Acceso-Doctor</title>
-  <link rel="stylesheet" href="../Css/registryDoctor.css">
+  <link rel="stylesheet" href="../Css/regDoctor.css">
 </head>
   <body>
-    <form action="../Registry-Doctor" method="post">
-      <h1>Registrar Doctor</h1>
+  <h1>Registrar Doctor</h1>
+  <form action="../Registry-Doctor" method="post">
 
       <label for="nombre">Nombre: </label>
       <input type="text" id="nombre" name="nombre" required>

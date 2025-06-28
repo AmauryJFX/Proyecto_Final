@@ -5,10 +5,10 @@
   List<Cita> citas = (List<Cita>) request.getAttribute("citasCompletadas");
 %>
 
-
 <html>
 <head>
     <title>Title</title>
+  <link rel="stylesheet" href="Css/historialDoc.css">
 </head>
 <body>
 
@@ -22,14 +22,11 @@
     <th>Hora</th>
     <th>Motivo</th>
     <th>Estado</th>
-    <th>Paciente Id:</th>
-
 
   </tr>
 
   <% if (citas != null && !citas.isEmpty()) {
     for (Cita c : citas){
-
   %>
 
   <tr>
@@ -51,9 +48,6 @@
   %>
 
 </table>
-
 <br>
-
-
 </body>
 </html>
