@@ -3,8 +3,11 @@ package org.mscoders.citas_medicas.SvPaciente;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+
+import org.mscoders.citas_medicas.BaseDatos.CRUD_His_medico;
 import org.mscoders.citas_medicas.BaseDatos.CRUD_Paciente;
 import org.mscoders.citas_medicas.model.Paciente;
+import org.mscoders.citas_medicas.model.His_Medico;
 
 import java.io.IOException;
 
@@ -20,8 +23,12 @@ public class SvLoginPaciente extends HttpServlet {
 
         if (paciente != null) {
             HttpSession session = req.getSession(true);
+
             session.setAttribute("paciente", paciente);
             session.setAttribute("paciente_id", paciente.getId());
+
+            His_Medico historial = CRUD_His_medico.obtenerPorPacienteId(paciente.getId());
+            session.setAttribute("historial", historial);
 
             session.setMaxInactiveInterval(30 * 60);
 

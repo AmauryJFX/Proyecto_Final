@@ -6,7 +6,7 @@
 </head>
 <body>
 
-        <form action="../Cita-Paciente" method="post" >
+        <form action="Cita-Paciente" method="post" >
 
                 <p>Agenda una cita</p>
 

@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Acceso Paciente</title>
+  <link rel="stylesheet" href="../Css/loginPaciente.css">
 </head>
 <body>
 

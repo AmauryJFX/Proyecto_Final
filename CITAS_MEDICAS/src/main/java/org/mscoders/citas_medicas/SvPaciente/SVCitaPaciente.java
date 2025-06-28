@@ -13,7 +13,6 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-
 @WebServlet (name = "SVCitaPaciente", value = "/Cita-Paciente")
 public class SVCitaPaciente extends HttpServlet {
 
@@ -34,7 +33,6 @@ public class SVCitaPaciente extends HttpServlet {
             LocalDate fecha = LocalDate.parse(fecha1);
             LocalTime hora = LocalTime.parse(hora1);
 
-
             Cita cita = new Cita();
             cita.setMotivo(motivo);
             cita.setFecha(fecha);
@@ -42,7 +40,6 @@ public class SVCitaPaciente extends HttpServlet {
             cita.setEstado(estado);
             cita.setPaciente_id(pacienteId);
             cita.setDoctor_id(doc);
-
 
             boolean crear = CRUD_Cita.Create(cita);
 
@@ -57,14 +54,11 @@ public class SVCitaPaciente extends HttpServlet {
             resp.sendRedirect("Paciente/citaPaciente.jsp?error=2");
         }
 
-
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         resp.sendRedirect("Paciente/citaPaciente.jsp");
     }
-    
-
 
 }

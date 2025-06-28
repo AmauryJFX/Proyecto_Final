@@ -1,0 +1,72 @@
+
+body{
+    background-image: url("Imagenes/Paciente.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: #f0f0f0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+
+form{
+    background-color: black;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px black;
+    text-align: center;
+    width: 300px;
+}
+
+h2{
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+label{
+    display: block;
+    margin-bottom: 8px;
+    text-align: left;
+}
+input{
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #2e2e2e;
+    color: #A7B3BE;
+}
+
+
+button{
+    padding: 10px 20px;
+    background-color: #5A6C7E;
+    color:white;
+    border:none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s ease;
+}
+button:hover{
+    background-color: #B0B7C2;
+}
+
+
+a {
+    display: block;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #A7B3BE;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

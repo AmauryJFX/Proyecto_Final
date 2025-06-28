@@ -49,7 +49,7 @@
   <button type="submit">Agendar Cita</button>
 </form>
 
-<form action="../CerrarSesion" method="post" style="display:inline; margin-left: 10px;">
+<form action="../Cerrar-Sesion" method="post" style="display:inline; margin-left: 10px;">
   <button type="submit">Cerrar Sesión</button>
 </form>
 

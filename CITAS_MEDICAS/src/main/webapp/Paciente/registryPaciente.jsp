@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Registro de Paciente</title>
+    <link rel="stylesheet" href="../Css/registryPaciente.css">
 </head>
 <body>
 
