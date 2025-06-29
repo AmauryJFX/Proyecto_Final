@@ -7,7 +7,7 @@ public class Conexion {
         Connection conectar = null;
             try {
                 Class.forName("com.mysql.cj.jdbc.Driver");
-                conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/citas_medicas","root","jetfuel");
+                conectar = DriverManager.getConnection("jdbc:mysql://localhost:3306/citas_medicas","root","AmauryJFX");
                 System.out.println("Conectada brooo");
             }catch (ClassNotFoundException | SQLException e){
                 System.out.println("Error al conectar BD " + e.getMessage());
