@@ -27,7 +27,7 @@ public class SvHistorial extends HttpServlet {
             return;
         }
 
-        List<Cita> citasCompletadas = CRUD_Cita.obtCompletado(doctor.getId());
+        List<Cita> citasCompletadas = CRUD_Cita.obtCompletadoDoc(doctor.getId());
 
         req.setAttribute("citasCompletadas", citasCompletadas);
         req.getRequestDispatcher("Medico/historialDoctor.jsp").forward(req, resp);
@@ -35,7 +35,7 @@ public class SvHistorial extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        resp.sendRedirect("../Medico/indexDoctor.jsp");
+        resp.sendRedirect("../Medico/historialDoctor.jsp");
     }
 
 }

@@ -44,8 +44,6 @@ public class SVCitaPaciente extends HttpServlet {
             boolean crear = CRUD_Cita.Create(cita);
 
             if (crear) {
-                //Aqui
-                //Ya le cambie
                 resp.sendRedirect("Paciente/loginPaciente.jsp?success=1");
             } else {
                 resp.sendRedirect("Paciente/loginPaciente.jsp?error=1");

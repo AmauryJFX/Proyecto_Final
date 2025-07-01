@@ -12,7 +12,6 @@
 <body>
 
 <%
-  // Parámetros para mostrar mensajes
   String success = request.getParameter("success");
   String error = request.getParameter("error");
 %>
@@ -62,6 +61,11 @@
 
 <form action="../Cargar-Doctores" method="get" style="display:inline;">
   <button type="submit">Agendar Cita</button>
+</form>
+
+<br><br>
+<form action="../Historial-Paciente" method="post" style="display:inline;">
+  <button type="submit">Ver mis Citas</button>
 </form>
 
 <br><br>

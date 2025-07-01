@@ -5,7 +5,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "SvCerrarSesion", value = "/Cerrar-Sesion")
+@WebServlet(name = "SvCerrarSesionDoc", value = "/Cerrar-SesionDoc")
 public  class SvCerrarSesion extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp){

@@ -72,5 +72,16 @@ class CRUD_CitaTest {
         System.out.println("Eliminado");
 
     }
+
+    @Test
+    void buscarCitaPorId() {
+
+        Cita cita = CRUD_Cita.buscarCitaPorId(1);
+        assertNotNull(cita);
+        assertEquals(cita.getId(), 1);
+        System.out.println(cita);
+
+    }
+
 }
 

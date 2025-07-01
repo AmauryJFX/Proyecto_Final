@@ -16,9 +16,10 @@ public class SvCargarDoctores extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        List<Doctor> listaDoctores = CRUD_Doctor.findAll();
+        List<Doctor> listaDoctores = CRUD_Doctor.Read();
 
-        request.setAttribute("listaDoctores", listaDoctores);
+        HttpSession session = request.getSession();
+        session.setAttribute("ListaDoctor", listaDoctores);
         request.getRequestDispatcher("Paciente/citaPaciente.jsp").forward(request, response);
     }
 }

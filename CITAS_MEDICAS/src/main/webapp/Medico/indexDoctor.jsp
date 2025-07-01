@@ -67,7 +67,7 @@
 
 
 <br>
-<form action="../Cerrar-Sesion" method="post" style="\display:inline; margin-left: 10px;">
+<form action="../Cerrar-SesionDoc" method="post" style="\display:inline; margin-left: 10px;">
     <button type="submit">Cerrar Sesión</button>
 </form>
 
